@@ -1,11 +1,32 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Container, Footer, Header, Main, Section } from './styles';
+import { Container, Footer, Header, Main, QueryField, Section } from './styles';
 
 import api from '../../services/api';
+import pokeball from '../../assets/pokeball.png';
+
+interface IPokemon {
+  abilities: any;
+  base_experience: any;
+  forms: any;
+  game_indices: any;
+  height: any;
+  held_items: any;
+  id: any;
+  is_default: any;
+  location_area_encounters: any;
+  moves: any;
+  name: any;
+  order: any;
+  species: any;
+  sprites: any;
+  stats: any;
+  types: any;
+  weight: any;
+}
 
 const Home: React.FC = () => {
   const [pokemonQuery, setPokemonQuery] = useState('');
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState<IPokemon | null>(null);
 
   useEffect(() => {
     const storage = localStorage.getItem('@MyPokedex');
@@ -17,13 +38,16 @@ const Home: React.FC = () => {
 
   const handleClick = useCallback(async () => {
     if (pokemonQuery.length < 1) {
+      setPokemon(null);
       return;
     }
 
     try {
-      const response = await api.get('/pokemon/charmander').then((res) => {
-        return res.data;
-      });
+      const response: IPokemon = await api
+        .get(`/pokemon/${pokemonQuery}`)
+        .then((res) => {
+          return res.data;
+        });
 
       console.log(response);
       setPokemon(response);
@@ -41,11 +65,9 @@ const Home: React.FC = () => {
   return (
     <Container>
       <Header>
-        <h2> This is home - header</h2>
-      </Header>
+        <h2>MY PODEDEX</h2>
 
-      <Main>
-        <Section>
+        <QueryField>
           <input
             type="text"
             placeholder="Fill Pokemon name or id"
@@ -61,11 +83,27 @@ const Home: React.FC = () => {
           <button type="button" onClick={handleClick}>
             Search
           </button>
+        </QueryField>
+      </Header>
+
+      <Main>
+        <Section>
+          {pokemon === null ? (
+            <>
+              <p>poke name</p>
+              <p>poke id</p>
+              <img src={pokeball} alt={pokeball} />
+            </>
+          ) : (
+              <div>
+                <p>{pokemon?.name}</p>
+                <p>{pokemon?.id}</p>
+              </div>
+            )}
         </Section>
-        <p>here is pokemon data</p>
       </Main>
 
-      <Footer>This is home - footer</Footer>
+      {/* <Footer>This is home - footer</Footer> */}
     </Container>
   );
 };
