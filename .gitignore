@@ -1,9 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
+
+# Logs
+*.log
 
 # testing
 /coverage
@@ -13,11 +12,38 @@
 
 # misc
 .DS_Store
+
+# npm
+npm-debug.log*
+
+# dotenv environment variables file
+.env
+.env.test
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
+# Optional eslint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Yarn Integrity file
+.yarn-integrity
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 yarn-debug.log*
 yarn-error.log*
+.pnp.*
