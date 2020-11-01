@@ -1,27 +1,17 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { UrlObject } from 'url';
 import { Container, Footer, Header, Main, QueryField, Section } from './styles';
 
 import api from '../../services/api';
 import pokeball from '../../assets/pokeball.png';
 
 interface IPokemon {
-  abilities: any;
-  base_experience: any;
-  forms: any;
-  game_indices: any;
-  height: any;
-  held_items: any;
-  id: any;
-  is_default: any;
-  location_area_encounters: any;
-  moves: any;
-  name: any;
-  order: any;
-  species: any;
-  sprites: any;
-  stats: any;
-  types: any;
-  weight: any;
+  height: number;
+  id: number;
+  is_default: boolean;
+  name: string;
+  image: string;
+  weight: number;
 }
 
 const Home: React.FC = () => {
@@ -43,14 +33,22 @@ const Home: React.FC = () => {
     }
 
     try {
-      const response = await api
-        .get(`https://pokeapi.co/api/v2/pokemon/${pokemonQuery}`)
-        .then((res) => {
-          return res.data;
-        });
+      const response = await api.get(`/pokemon/${pokemonQuery}`).then((res) => {
+        return res.data;
+      });
 
       console.log(response);
-      setPokemon(response);
+
+      const pokeResponse: IPokemon = {
+        height: response.height,
+        id: response.id,
+        is_default: response.is_default,
+        name: response.name,
+        image: response.sprites.other.dream_world.front_default,
+        weight: response.name,
+      };
+
+      setPokemon(pokeResponse);
 
       localStorage.setItem('@MyPokedex', JSON.stringify(pokemon));
     } catch (e) {
@@ -100,10 +98,7 @@ const Home: React.FC = () => {
             <div>
               <p>{pokemon?.name}</p>
               <p>{pokemon?.id}</p>
-              <img
-                src={pokemon?.sprites.other.dream_world.front_default}
-                alt=''
-              />
+              <img src={pokemon?.image} alt='' />
             </div>
           )}
         </Section>
