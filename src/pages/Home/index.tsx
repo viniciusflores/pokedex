@@ -2,17 +2,8 @@ import React, {
   useState,
   useCallback,
   useEffect,
-  useState,
-  useCallback,
-  useEffect,
 } from 'react';
 import {
-  Container,
-  Footer,
-  Header,
-  Main,
-  QueryField,
-  Section,
   Container,
   Footer,
   Header,
@@ -118,9 +109,10 @@ const Home: React.FC = () => {
               <div>
                 <p>{pokemon?.name}</p>
                 <p>{pokemon?.id}</p>
-
-                <img src={pokemon?.sprites.front_default} alt={pokeball} />
-                {/* src={pokemon?.sprites.other.official - artwork - front_default} */}
+                <img
+                  src={pokemon?.sprites.other.dream_world.front_default}
+                  alt={pokeball}
+                />
               </div>
             )}
         </Section>
