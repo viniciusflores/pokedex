@@ -101,7 +101,6 @@ const Home: React.FC = () => {
               <img
                 src={pokemon?.sprites.other.dream_world.front_default}
                 alt=''
-                role={pokemon?.name}
               />
             </div>
           )}
