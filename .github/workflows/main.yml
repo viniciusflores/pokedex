@@ -13,17 +13,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.1
       with:
-            persist-credentials: false
+        persist-credentials: false
 
     - name: Install and Build
       run: |
         npm install
-        npm run-script build
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.5.9
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
+    - name: Build
+      run: |
+        npm run-script predeploy
+
+    - name: Deploy
+      run: |
+        npm run-script deploy
 
