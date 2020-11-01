@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "https://viniciusflores.github.io/pokedex/static/js/main.62c717fe.chunk.js",
+    "main.js.map": "https://viniciusflores.github.io/pokedex/static/js/main.62c717fe.chunk.js.map",
+    "runtime-main.js": "https://viniciusflores.github.io/pokedex/static/js/runtime-main.1c878850.js",
+    "runtime-main.js.map": "https://viniciusflores.github.io/pokedex/static/js/runtime-main.1c878850.js.map",
+    "static/js/2.968815fa.chunk.js": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js",
+    "static/js/2.968815fa.chunk.js.map": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js.map",
+    "static/js/3.25e916fa.chunk.js": "https://viniciusflores.github.io/pokedex/static/js/3.25e916fa.chunk.js",
+    "static/js/3.25e916fa.chunk.js.map": "https://viniciusflores.github.io/pokedex/static/js/3.25e916fa.chunk.js.map",
+    "index.html": "https://viniciusflores.github.io/pokedex/index.html",
+    "static/js/2.968815fa.chunk.js.LICENSE.txt": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js.LICENSE.txt",
+    "static/media/pokeball.a59a1b76.png": "https://viniciusflores.github.io/pokedex/static/media/pokeball.a59a1b76.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c878850.js",
+    "static/js/2.968815fa.chunk.js",
+    "static/js/main.62c717fe.chunk.js"
+  ]
+}
