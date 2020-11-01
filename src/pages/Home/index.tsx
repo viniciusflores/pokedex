@@ -33,9 +33,11 @@ const Home: React.FC = () => {
     }
 
     try {
-      const response = await api.get(`/pokemon/${pokemonQuery}`).then((res) => {
-        return res.data;
-      });
+      const response = await api
+        .get(`https://pokeapi.co/api/v2/pokemon/${pokemonQuery}`)
+        .then((res) => {
+          return res.data;
+        });
 
       console.log(response);
 
