@@ -21,9 +21,9 @@ jobs:
 
     - name: Build
       run: |
-        npm run-script predeploy
+        CI=false npm run-script predeploy
 
     - name: Deploy
       run: |
-        npm run-script deploy
+        CI=false npm run-script deploy
 
