@@ -25,15 +25,16 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
+    "camelcase": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [1, {
-      "extensions": [".tsx"]
+      "extensions": [".ts", ".tsx"]
     }],
-    "import/prefer-default-export": "off",
-    "camelcase": "off",
     "@typescript-eslint/ban-types": "off",
+    "import/prefer-default-export": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

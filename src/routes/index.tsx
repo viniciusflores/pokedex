@@ -5,7 +5,7 @@ import Home from '../pages/Home';
 
 const Routes: React.FC = () => (
   <Switch>
-    <Route path="/" exact component={Home} />
+    <Route path='/' exact component={Home} />
   </Switch>
 );
 
