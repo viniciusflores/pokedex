@@ -4,7 +4,6 @@ import { Container, Footer, Header, Main, QueryField, Section } from './styles';
 import api from '../../services/api';
 import pokeball from '../../assets/pokeball.png';
 
-// eslint-ignore
 interface IPokemon {
   abilities: any;
   base_experience: any;
