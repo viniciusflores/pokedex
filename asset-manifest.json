@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/pokedex/static/js/main.0a3973a9.chunk.js",
-    "main.js.map": "/pokedex/static/js/main.0a3973a9.chunk.js.map",
-    "runtime-main.js": "/pokedex/static/js/runtime-main.0d3e8953.js",
-    "runtime-main.js.map": "/pokedex/static/js/runtime-main.0d3e8953.js.map",
-    "static/js/2.ae32d8c5.chunk.js": "/pokedex/static/js/2.ae32d8c5.chunk.js",
-    "static/js/2.ae32d8c5.chunk.js.map": "/pokedex/static/js/2.ae32d8c5.chunk.js.map",
-    "static/js/3.fa5c261b.chunk.js": "/pokedex/static/js/3.fa5c261b.chunk.js",
-    "static/js/3.fa5c261b.chunk.js.map": "/pokedex/static/js/3.fa5c261b.chunk.js.map",
-    "index.html": "/pokedex/index.html",
-    "static/js/2.ae32d8c5.chunk.js.LICENSE.txt": "/pokedex/static/js/2.ae32d8c5.chunk.js.LICENSE.txt",
-    "static/media/pokeball.a59a1b76.png": "/pokedex/static/media/pokeball.a59a1b76.png"
+    "main.js": "https://viniciusflores.github.io/pokedex/static/js/main.62c717fe.chunk.js",
+    "main.js.map": "https://viniciusflores.github.io/pokedex/static/js/main.62c717fe.chunk.js.map",
+    "runtime-main.js": "https://viniciusflores.github.io/pokedex/static/js/runtime-main.1c878850.js",
+    "runtime-main.js.map": "https://viniciusflores.github.io/pokedex/static/js/runtime-main.1c878850.js.map",
+    "static/js/2.968815fa.chunk.js": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js",
+    "static/js/2.968815fa.chunk.js.map": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js.map",
+    "static/js/3.25e916fa.chunk.js": "https://viniciusflores.github.io/pokedex/static/js/3.25e916fa.chunk.js",
+    "static/js/3.25e916fa.chunk.js.map": "https://viniciusflores.github.io/pokedex/static/js/3.25e916fa.chunk.js.map",
+    "index.html": "https://viniciusflores.github.io/pokedex/index.html",
+    "static/js/2.968815fa.chunk.js.LICENSE.txt": "https://viniciusflores.github.io/pokedex/static/js/2.968815fa.chunk.js.LICENSE.txt",
+    "static/media/pokeball.a59a1b76.png": "https://viniciusflores.github.io/pokedex/static/media/pokeball.a59a1b76.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d3e8953.js",
-    "static/js/2.ae32d8c5.chunk.js",
-    "static/js/main.0a3973a9.chunk.js"
+    "static/js/runtime-main.1c878850.js",
+    "static/js/2.968815fa.chunk.js",
+    "static/js/main.62c717fe.chunk.js"
   ]
 }
