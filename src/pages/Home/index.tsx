@@ -1,16 +1,5 @@
-import React, {
-  useState,
-  useCallback,
-  useEffect,
-} from 'react';
-import {
-  Container,
-  Footer,
-  Header,
-  Main,
-  QueryField,
-  Section,
-} from './styles';
+import React, { useState, useCallback, useEffect } from 'react';
+import { Container, Footer, Header, Main, QueryField, Section } from './styles';
 
 import api from '../../services/api';
 import pokeball from '../../assets/pokeball.png';
@@ -67,7 +56,7 @@ const Home: React.FC = () => {
       localStorage.removeItem('@MyPokedex');
       console.log(`ocorreu um erro ao buscar om pokemon: ${e.message}`);
     }
-  }, [pokemonQuery]);
+  }, [pokemon, pokemonQuery]);
 
   const handleInput = useCallback((event) => {
     setPokemonQuery(event.target.value);
@@ -80,8 +69,8 @@ const Home: React.FC = () => {
 
         <QueryField>
           <input
-            type="text"
-            placeholder="Fill Pokemon name or id"
+            type='text'
+            placeholder='Fill Pokemon name or id'
             value={pokemonQuery}
             onChange={handleInput}
             onKeyPress={(e) => {
@@ -91,8 +80,8 @@ const Home: React.FC = () => {
             }}
           />
 
-          <button type="button" onClick={handleClick}>
-            Search
+          <button type='button' onClick={handleClick}>
+            Search Search
           </button>
         </QueryField>
       </Header>
@@ -103,22 +92,24 @@ const Home: React.FC = () => {
             <>
               <p>poke name</p>
               <p>poke id</p>
-              <img src={pokeball} alt={pokeball} />
+              <img src={pokeball} alt='pokeball' />
             </>
           ) : (
-              <div>
-                <p>{pokemon?.name}</p>
-                <p>{pokemon?.id}</p>
-                <img
-                  src={pokemon?.sprites.other.dream_world.front_default}
-                  alt={pokeball}
-                />
-              </div>
-            )}
+            <div>
+              <p>{pokemon?.name}</p>
+              <p>{pokemon?.id}</p>
+              <img
+                src={pokemon?.sprites.other.dream_world.front_default}
+                alt=''
+                role={pokemon?.name}
+              />
+            </div>
+          )}
         </Section>
+        <Footer>
+          <div />
+        </Footer>
       </Main>
-
-      {/* <Footer>This is home - footer</Footer> */}
     </Container>
   );
 };
