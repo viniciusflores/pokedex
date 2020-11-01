@@ -1,5 +1,25 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { Container, Footer, Header, Main, QueryField, Section } from './styles';
+import React, {
+  useState,
+  useCallback,
+  useEffect,
+  useState,
+  useCallback,
+  useEffect,
+} from 'react';
+import {
+  Container,
+  Footer,
+  Header,
+  Main,
+  QueryField,
+  Section,
+  Container,
+  Footer,
+  Header,
+  Main,
+  QueryField,
+  Section,
+} from './styles';
 
 import api from '../../services/api';
 import pokeball from '../../assets/pokeball.png';
@@ -43,17 +63,17 @@ const Home: React.FC = () => {
     }
 
     try {
-      const response: IPokemon = await api
-        .get(`/pokemon/${pokemonQuery}`)
-        .then((res) => {
-          return res.data;
-        });
+      const response = await api.get(`/pokemon/${pokemonQuery}`).then((res) => {
+        return res.data;
+      });
 
       console.log(response);
       setPokemon(response);
 
       localStorage.setItem('@MyPokedex', JSON.stringify(pokemon));
     } catch (e) {
+      setPokemon(null);
+      localStorage.removeItem('@MyPokedex');
       console.log(`ocorreu um erro ao buscar om pokemon: ${e.message}`);
     }
   }, [pokemonQuery]);
@@ -98,6 +118,9 @@ const Home: React.FC = () => {
               <div>
                 <p>{pokemon?.name}</p>
                 <p>{pokemon?.id}</p>
+
+                <img src={pokemon?.sprites.front_default} alt={pokeball} />
+                {/* src={pokemon?.sprites.other.official - artwork - front_default} */}
               </div>
             )}
         </Section>
