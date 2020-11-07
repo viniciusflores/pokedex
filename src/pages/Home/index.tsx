@@ -1,6 +1,13 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { UrlObject } from 'url';
-import { Container, Footer, Header, Main, QueryField, Section } from './styles';
+import {
+  Container,
+  Footer,
+  Header,
+  Main,
+  QueryField,
+  MyPokemon,
+  MyPokemonDefault,
+} from './styles';
 
 import api from '../../services/api';
 import pokeball from '../../assets/pokeball.png';
@@ -39,15 +46,13 @@ const Home: React.FC = () => {
           return res.data;
         });
 
-      console.log(response);
-
       const pokeResponse: IPokemon = {
         height: response.height,
         id: response.id,
         is_default: response.is_default,
         name: response.name,
         image: response.sprites.other.dream_world.front_default,
-        weight: response.name,
+        weight: response.weight,
       };
 
       setPokemon(pokeResponse);
@@ -89,21 +94,33 @@ const Home: React.FC = () => {
       </Header>
 
       <Main>
-        <Section>
-          {pokemon === null ? (
-            <>
-              <p>poke name</p>
-              <p>poke id</p>
-              <img src={pokeball} alt='pokeball' />
-            </>
-          ) : (
+        {pokemon === null ? (
+          <MyPokemonDefault>
+            <p>poke name</p>
+            <p>poke id</p>
+            <img src={pokeball} alt='pokeball' />
+          </MyPokemonDefault>
+        ) : (
+          <MyPokemon>
+            <h2>
+              {pokemon?.name}
+              <span>#{pokemon?.id}</span>
+            </h2>
             <div>
-              <p>{pokemon?.name}</p>
-              <p>{pokemon?.id}</p>
               <img src={pokemon?.image} alt='' />
+              <div>
+                <p>
+                  Height <span>{pokemon.height}</span>
+                </p>
+
+                <p>
+                  Weight<span>{pokemon.weight}</span>
+                </p>
+              </div>
             </div>
-          )}
-        </Section>
+          </MyPokemon>
+        )}
+
         <Footer>
           <div />
         </Footer>

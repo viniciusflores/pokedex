@@ -15,7 +15,9 @@ export const Main = styled.main`
   padding-top: 50px;
 `;
 
-export const Section = styled.section``;
+export const MyPokemon = styled.section``;
+
+export const MyPokemonDefault = styled.section``;
 
 export const QueryField = styled.div``;
 
